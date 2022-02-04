@@ -1,4 +1,4 @@
-> What is more efficient value or pointer method receivers?
+## What is more efficient value or pointer method receivers?
 
 ### A) Why would you think `struct` is more efficient?
 
