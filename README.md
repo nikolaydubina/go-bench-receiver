@@ -3,10 +3,12 @@
 A) Why would you think struct is more efficient?
 
 You are making single call to fetch struct and its fields.
+Especially given that interce is a struct-wrapper around pointer with type.
 
 B) Why would you think pointer is more efficient?
 
 You are not copying unnecessary data, only pointer is passed to function.
+Especially given that pointer is always same size.
 
 ## Result
 
@@ -44,3 +46,10 @@ Benchmark_DepServicePointer_UpPointerMany_10      	30453177	       392.7 ns/op	 
 Benchmark_EmptyServiceStruct                      	 2979396	      4039.0 ns/op	       0 B/op	       0 allocs/op
 Benchmark_EmptyServicePointer                     	 2984328	      4034.0 ns/op	       0 B/op	       0 allocs/op
 ```
+
+## Why is the result this way?
+
+Looks like sturct/poitner does not matter much to Go runtime.
+It must be using some lookup table based on type, regardless if it pointer or struct type, for methods of type.
+Similarly, interface must be resolved to concrete method too.
+Confirming this with Go source code is area of further research.
