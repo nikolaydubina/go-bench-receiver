@@ -1,14 +1,14 @@
 ## What is more efficient value or pointer method receivers?
 
-### A) Why would you think `struct` is more efficient?
+A) Why would you think struct is more efficient?
 
 You are making single call to fetch struct and its fields.
 
-### B) Why would you think `pointer` is more efficient?
+B) Why would you think pointer is more efficient?
 
 You are not copying unnecessary data, only pointer is passed to function.
 
-### Result
+## Result
 
 Overall delta is negligible.
 
