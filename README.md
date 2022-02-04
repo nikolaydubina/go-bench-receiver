@@ -16,10 +16,10 @@ Difference is in order of few ns, which is dominated by logic of function (typic
 
 - small structs >>> structs few ns faster
     - Subject to codebase, but this is one of common situations. The effect is unnoticeable and dominated by business logic.
-- large structs are deeply nested >>> pointers is few hundred ns faster
-    - You have to have very large and nested structs to see difference. This is only case when pointe is noticeably faster. Difference can be big. This is effect B).
-- small structs and deeply nested >>> structs is few ns faster
-    - You have to have very deep nesting to see difference to observe this effect. This is effect A).
+- deeply nested large structs >>> pointers is few hundred ns faster
+    - You have to have very large and nested structs to see difference. This is only case when pointe is noticeably faster. Difference can be big. This is effect B)
+- deeply nested small structs >>> structs is few ns faster
+    - You have to have very deep nesting to see difference to observe this effect. This is effect A)
 
 
 ```
