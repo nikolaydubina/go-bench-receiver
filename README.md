@@ -17,10 +17,9 @@ Overall delta is negligible.
 - small structs >>> structs few ns faster
     - Subject to codebase, but this is one of common situations. The effect is unnoticeable and dominated by business logic.
 - deeply nested large structs >>> pointers is few hundred ns faster
-    - You have to have very large and nested structs to see difference. This is only case when pointe is noticeably faster. Difference can be big. This is effect B)
+    - You have to have very large and nested structs to observe this effect. This is only case when pointer is noticeably faster. Difference can be big. This is effect B)
 - deeply nested small structs >>> structs is few ns faster
-    - You have to have very deep nesting to see difference to observe this effect. This is effect A)
-
+    - You have to have very deep nesting to observe this effect. This is effect A)
 
 ```
 $ GOMAXPROCS=1 go test -timeout=1h -bench=. -benchtime=10s -benchmem ./...
