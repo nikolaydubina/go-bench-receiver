@@ -10,9 +10,7 @@ You are not copying unnecessary data, only pointer is passed to function.
 
 ### Result
 
-Overall, difference is negligible.
-Difference is in order of few ns, which is dominated by logic of function (typically hundreds of ns).
-
+Overall delta is negligible.
 
 - small structs >>> structs few ns faster
     - Subject to codebase, but this is one of common situations. The effect is unnoticeable and dominated by business logic.
